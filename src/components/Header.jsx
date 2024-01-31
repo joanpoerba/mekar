@@ -42,33 +42,6 @@ const Header = ({ bgColor }) => {
         </Link>
       </header>
 
-      {/* <header className={`hidden lg:block w-full fixed z-10 ${bgColor}`}>
-        <section className="flex justify-center">
-          <nav className="w-[80%]">
-            <ul className="flex flex-row justify-between items-center">
-              <li>
-                <Link to="/home" className="flex items-center gap-x-3">
-                  <img className="w-[30px]" src="/whiteLogo.png" alt="" />
-                  <p className="text-white font-semibold text-2xl cursor-pointer">
-                    Mekar Jaya
-                  </p>
-                </Link>
-              </li>
-              <li>
-                <Link className="flex items-center gap-x-2" to="/pengaturan">
-                  <img
-                    className="w-[33px] rounded-full"
-                    src="img/unknown.png"
-                    alt=""
-                  />
-                  <p className="text-white font-normal text-md">Jhon Doe</p>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </header> */}
-
       <header
         className={`w-full block lg:hidden bg-zinc-800 fixed z-10 ${
           navbarStatus ? "h-fit p-6" : "p-6"
@@ -81,7 +54,9 @@ const Header = ({ bgColor }) => {
               src="/whiteLogo.png"
               alt=""
             />
-            <p className="font-bold text-white text-2xl">Mekar Jaya</p>
+            <p className="font-bold text-white text-xl lg:text-2xl">
+              Mekar Jaya
+            </p>
           </div>
           <div>
             <Hamburger
@@ -108,7 +83,9 @@ const Header = ({ bgColor }) => {
               <a href="#projek">projek</a>
             </li>
             <li className="w-[90%] md:w-[50%]">
-              <Button color="default" className="w-full rounded-full">kontak</Button>
+              <Button color="default" className="w-full rounded-full">
+                kontak
+              </Button>
             </li>
           </ul>
         </nav>
