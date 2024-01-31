@@ -3,12 +3,12 @@ import { Accordion } from "flowbite-react";
 const Pertanyaan = () => {
   return (
     <div className="grid grid-cols-12 py-20 text-white">
-      <div className="flex flex-col items-center col-start-2 col-end-12">
-        <h1 className="text-4xl font-bold">
+      <div className="flex flex-col items-start lg:items-center col-span-12 lg:col-start-2 lg:col-end-12 px-5 lg:p-0">
+        <h1 className="text-2xl lg:text-4xl font-bold">
           Pertanyaan yang sering ditanyakan
         </h1>
         <p className="font-light mt-3">Ini mungkin dapat membantu mu</p>
-        <Accordion className="w-[700px] mt-20" collapseAll>
+        <Accordion className="w-full lg:w-[700px] mt-20" collapseAll>
           <Accordion.Panel>
             <Accordion.Title className="bg-white focus:ring-0 text-black">
               PT Mekar Jaya itu apa?

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Tentang from "../components/Tentang";
-import FloorCoating from "../components/FloorCoating";
+import Jasa from "../components/Jasa";
 import Projek from "../components/Projek";
 import Pertanyaan from "../components/Pertanyaan";
 import Footer from "../components/Footer";
@@ -30,7 +30,7 @@ const Home = () => {
       </div>
       <Tentang />
       <div className="w-full rounded-tl-[70px] rounded-tr-[70px] bg-neutral-600">
-        <FloorCoating />
+        <Jasa />
         <Projek />
         <Pertanyaan />
       </div>

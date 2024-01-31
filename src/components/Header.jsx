@@ -1,7 +1,12 @@
 import { Button, Flowbite } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Hamburger from "hamburger-react";
 
 const Header = ({ bgColor }) => {
+  const [isOpen, setOpen] = useState(false);
+  const [navbarStatus, setNavbarStatus] = useState(false);
+
   const customHeaderTheme = {
     button: {
       color: {
@@ -14,7 +19,7 @@ const Header = ({ bgColor }) => {
   return (
     <Flowbite theme={{ theme: customHeaderTheme }}>
       <header
-        className={`w-full flex justify-between items-center transition-all text-white fixed z-10 ${bgColor}`}
+        className={`w-full hidden lg:flex justify-between items-center transition-all text-white fixed z-10 ${bgColor}`}
       >
         <a href="#home" className="flex items-center gap-x-2 cursor-pointer">
           <img className="w-[30px]" src="/whiteLogo.png" alt="" />
@@ -35,6 +40,78 @@ const Header = ({ bgColor }) => {
             Kontak
           </Button>
         </Link>
+      </header>
+
+      {/* <header className={`hidden lg:block w-full fixed z-10 ${bgColor}`}>
+        <section className="flex justify-center">
+          <nav className="w-[80%]">
+            <ul className="flex flex-row justify-between items-center">
+              <li>
+                <Link to="/home" className="flex items-center gap-x-3">
+                  <img className="w-[30px]" src="/whiteLogo.png" alt="" />
+                  <p className="text-white font-semibold text-2xl cursor-pointer">
+                    Mekar Jaya
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link className="flex items-center gap-x-2" to="/pengaturan">
+                  <img
+                    className="w-[33px] rounded-full"
+                    src="img/unknown.png"
+                    alt=""
+                  />
+                  <p className="text-white font-normal text-md">Jhon Doe</p>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </header> */}
+
+      <header
+        className={`w-full block lg:hidden bg-zinc-800 fixed z-10 ${
+          navbarStatus ? "h-fit p-6" : "p-6"
+        }`}
+      >
+        <section className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <img
+              className="w-[33px] rounded-full"
+              src="/whiteLogo.png"
+              alt=""
+            />
+            <p className="font-bold text-white text-2xl">Mekar Jaya</p>
+          </div>
+          <div>
+            <Hamburger
+              size={26}
+              onToggle={(toggled) => {
+                if (toggled) {
+                  setNavbarStatus(true);
+                } else {
+                  setNavbarStatus(false);
+                }
+              }}
+              toggled={isOpen}
+              toggle={setOpen}
+              color="white"
+            />
+          </div>
+        </section>
+        <nav className={`${navbarStatus ? "block" : "hidden"}`}>
+          <ul className="flex flex-col items-center text-white gap-y-5 py-5">
+            <li>
+              <a href="#tentang">tentang</a>
+            </li>
+            <li>
+              <a href="#projek">projek</a>
+            </li>
+            <li className="w-[90%] md:w-[50%]">
+              <Button color="default" className="w-full rounded-full">kontak</Button>
+            </li>
+          </ul>
+        </nav>
       </header>
     </Flowbite>
   );
